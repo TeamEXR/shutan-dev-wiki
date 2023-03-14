@@ -1,35 +1,25 @@
-# Chapter 1: Reverse Engineering numbers
+# Chapter 1: Numbers for everything
 
-There are three key principles that together can explain how computers nowadays are capable of so many tasks:
+The magic that enables computers to do so many different tasks nowadays isn't because they are somehow sentient or because there's a magical matter inside every PC or mobile that can do everything.
 
-- All data is numerical: some data is inherently so, and other forms of data can be transformed into numbers. (The rules used to transform some form of data into a number are called a 'format' or an 'encoding', and they are often more or less arbitrary and vary from one data type to the next. For instance, an image may be stored using the PNG or JPEG formats, and this text can be stored using the UTF-8 encoding.)
+It's because we humans are very good at turning everything into numbers
 
-- CPUs handle data in the form of numbers: they take instructions (the commands that they will execute) encoded as numbers, operate on data encoded as numbers, and produce results encoded as numbers. They also interact with the outside world by sending and receiving numbers.
+On a fundamental level, all computers see and work with are numbers, either numerical properties of data, or data turned to numbers using made up tools. Examples include describing colors by dividing them into Red/Green/Blue and assigning a number between 0 and 255 to them. Or assigning a number to every letter on a keyboard then putting numbers together to form text. 
 
-- Other hardware is designed to process these numbers, generate them from external inputs or transform them into outputs: for example, keyboards turn keypresses into numbers, and screens turn numbers into visible light (which renders images, text, etc.). 
+These numbers aren't meaningful by themselves, but they become meaningful because we assign them meanings. This makes them a **Code**. The rules that we use to assign meaning to numbers is called **Encoding** (or **Format**). The Process of converting data into numbers is called **Coding**. The process of converting numbers back to their original form is called **Decoding**.
 
-Nowadays most computers are designed to work with binary numbers (0s and 1s) because they're the easiest to detect inside CPUs and other hardware. 0 = no electric signal, 1 = electric signal. (While we could make computers that work with decimal numbers[1], due to electrical engineering reasons making them work with 0s and 1s is easier). These binary numbers are called **Machine Code**.
+**Machine Code** (numbers that machines are designed to work with) lets us harness the power of electricity to make our tasks easier and faster. All we need to do is to encode problems into math operations, design electric processors that can run those math operations really fast, and design devices that convert data to numbers and back (called **Input/Output** devices).
 
-Modern computers work with multiple units of information: a Bit (single binary digit), a Byte (8 binary digits or 2 hex digits), or a Word (a multiple of Bytes, varies from CPU arch to arch).
+An example is using a **Scanner** to scan a picture on a paper:
 
-When dealing with Machine Code hex bytes are the most common representation used because 2 hexadecimal digits can fit exactly as many values as 8 binary digits. 
+1. The Scanner (an input device), scans the picture and encodes it as numbers
+2. The numbers are sent to the processor
+3. The Processor asks the Monitor (an output device) what image it's currently displaying, and compares the numbers representing the scanned image and the currently displayed image, manipulating them using math operations.
+4. The new numbers (now representing the scanned image in a way the monitor can work with) are sent to the Monitor
+5. The Monitor decodes the numbers and displays the scanned image.
 
-The Machine code underneath beneath every piece of data or instruction can be viewed by pretty much anyone using special editors called "Hex Editors", You might already be familiar with those apps and the hex views like this if you've ever done hex-edit based hacks/cheats.
+You could take the processor away, grab the numbers from both the monitor and the scanner, then do all the caculations needed to Encode the image as numbers the monitor understands. But it would take a couple of hours. A processor can finish all that in less than a milisecond thanks to the power of electricity.
 
-<img src="file:///C:/Users/COMIRAN/AppData/Roaming/marktext/images/2023-03-08-00-37-22-image.png" title="" alt="" data-align="center">
+Since every program and data in a computer consists of machine code we can easily view, we can analyze the numbers and extrapolate the inner workings of said programs/data. For example we can analyze Pokemon X/Y by looking at the numbers it consists of, and then edit those numbers to modify the game itself.
 
-The fact that these hex bytes are available to everyone means that we can reverse engineer the inner workings of every program with enough time and effort. 
-
-Through a process called **Disassembly** we can turn these hex bytes back to more readable but still compact form called Assembly, a series of CPU instructions alongside the data given to the CPU as arguments. The assembly becomes more readable as we feed it info we dig up.
-
-![](assets/2023-03-08-15-54-39-top-readme-nocash.png)
-
-Then through another process called **Decompilation**, we can make an educated guess about what the original C/C++ code could have looked like before turning into CPU instructions. Which enables us to understand the program better and even modify it if we need to.
-
-![](assets/2023-03-08-15-57-03-top-readme-ghidra.png)
-
-The two above images are from PMD-SkyDebug, a similar project where Reverse Engineers documented Pokemon Mystery Dungeon: Explorers of Sky's code by disassembling, decompiling, and documenting the game's code.
-
-The same process can be applied to almost any other program, and here at Shutan our goal is to use the same process on Pokemon XY, making a framework where everyone can reverse engineer the parts of the code they're interested in. Which in turn makes it possible to modify or extend that part of the game!
-
-The following chapters will dive into how Assembly works, how we get to hex bytes from pure C/C++ code, the tools we can use to Reverse Engineer the game, and some of the most common ways C/C++ code turns into Assembly.
+But first we have to understand how Computers work with numbers, and for that we need to understand how electrical Calculators work. Let's start by building a calculator.
