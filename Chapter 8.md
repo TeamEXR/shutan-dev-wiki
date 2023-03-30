@@ -19,7 +19,7 @@ Now that we have the textual form of machine code to work with, we no longer nee
 Another part of our mental load we can let programs take care of is "how to convert complex tasks like displaying images or playing videos to math operations". We can design programming languages with higher levels of abstraction where we can type `play(Video video);` or similar then stop worrying about the math instructions that'll get translated to.
 Code written in **High Level Language**s like C or C++ gets converted to Assembly instructions through a process called **Compilation**, and the program that does this is called **Compiler**. 
 
-(TODO: add diagram showing the relationship between C++, C, Assembly, and Machine Code)
+
 
 What enables us to reverse engineer the inner workings of most software is that we have direct access to the machine code said software consists of, both in the case of assets and in the case of Code. We can then convert this Machine Code into Assembly through the process of **Disassembly**, then make a guess of the code that could have generated the Assembly through the process of **Decompilation**. 
 

@@ -8,7 +8,7 @@ This way we can describe Binary math operations as a bunch of logic questions pu
 
 ## Logic Gates
 
-Logic gates are devices that take two inputs and then give an output based on the logic of the device. For example an OR gate outputs "True" if any of the inputs are "True". An AND gate outputs "True" only if both inputs are "True". We can construct Logic gates that work with electricity[2], fluids[3], steam[4], rotational power[5], and light[6]. Modern processors are electronic, thus they use logic gates that work with electricity to produce results.
+Logic gates are devices that take two inputs and then give an output based on the logic of the device. For example an OR gate outputs "True" if any of the inputs are "True". An AND gate outputs "True" only if both inputs are "True". We can construct Logic gates that work with electricity, fluids, steam, rotational power, and light. Modern processors are electronic, thus they use logic gates that work with electricity to produce results.
 
 ## Using logic gates for Math
 
@@ -42,7 +42,7 @@ Thus we can scale up binary addition by chaining binary adders together, each ta
 
 In fact we could define the other three math operations as a chain of additions and use binary adders chained up together:
 
-- Subtraction is just adding a negative number to a positive number (5 - 3 = 5 + (-3)). We can encode negative binary numbers to some positive binary numbers to accomplish this.[7]
+- Subtraction is just adding a negative number to a positive number (5 - 3 = 5 + (-3)). We can encode negative binary numbers to some positive binary numbers to accomplish this.[2]
 
 - Multiplication is just an addition chain for an operand (3 x 4 = 3 + 3 + 3 + 3, or 3 x 4 = 4 + 4 + 4)
 
@@ -51,3 +51,7 @@ In fact we could define the other three math operations as a chain of additions 
 We can hook up binary adders in configurations that let us do Subtraction, Multiplication, and Division. Making dedicated circuits for each operations.
 
 Then we can hook up Input/Output devices to each circuit, making calculators that can do Addition, calculators that can do subtraction, etc. But creating calculators that can do any of the operations above is a bit more tricky.
+
+[1] You can theoretically design logic math systems with 3 or more values then design logic gates working with said values but the whole design would get so complicated it'd become hard to comprehend in the first place.
+
+[2] The most efficient way to encode negative binary numbers to positive ones is [Two's complement](https://en.wikipedia.org/wiki/Two%27s_complement)

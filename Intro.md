@@ -1,4 +1,4 @@
-# All you need to know before reverse engineering software
+# Introduction
 
 Reverse Engineering (RE for short in this guide) is the art of taking something completely unknown, pulling it apart, documenting how each part works and how they form a whole together.
 

@@ -42,11 +42,11 @@ Let's see what the above numbers look like in hexadecimal:
 
 Note: to easily understand which base different numbers are written in, special prefixes are used with the numbers. "0x" is used for hex numbers (0x15 = 21) while binary numbers use "0b" (0b1111 = 15). Decimal numbers don't use a prefix
 
-We can represent the same value using any arbitrary base[1], but Binary and Hexadecimal are important ones when it comes to working with calculators and computers. The 0s and 1s we designed our Calculators around earlier are the same digits used in the binary system, and as we'll find out in a bit Hexadecimal numbers are easier to deal with than binary ones when encoding data.
+We can represent the same value using any arbitrary base, but Binary and Hexadecimal are important ones when it comes to working with calculators and computers. The 0s and 1s we designed our Calculators around earlier are the same digits used in the binary system, and as we'll find out in a bit Hexadecimal numbers are easier to deal with than binary ones when encoding data.
 
 ## Bits, Bytes, Words
 
-**Bi**nary Digi**t**s are called Bits. A **Byte** is a common way of splitting binary numbers used in every computer today, consisting of 8 bits[2]. A **Word** is a fixed sized unit containing bits that is important to Processor designs (we'll talk more about Word in the Advanced RE guide as it's not that important here).
+**Bi**nary Digi**t**s are called Bits. A **Byte** is a common way of splitting binary numbers used in every computer today, consisting of 8 bits. A **Word** is a fixed sized unit containing bits that is important to Processor designs (we'll talk more about Word in the Advanced RE guide as it's not that important here).
 
 Machine Code in every computer is divided into Bytes, but it's pretty common to use the hexadecimal representation of bytes (called **Hex Bytes**) rather than the binary representation. This is possible because 2 hexadecimal digits can contain as many values as 8 bits.
 

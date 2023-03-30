@@ -7,3 +7,13 @@ Many mechanical devices were made over time to help with arithmetic, from the Ab
 You need to somehow assign numbers to levels of electricity to make an Electronic Calculator. The simplest way to do this is to assign 1 to the presence of high voltage electricity[4], and 0 to the absence of electricity. This lets us make cheap electronic processors that are as small as possible without worrying without the limits of electrical engineering getting in the way and disrupting our operations[5]. 
 
 The 0s and 1s of electricity are all we need to perform math calculations. We make this possible by encoding normal numbers into binary numbers and math operations into a series of Boolean logic operations.
+
+[1] [Abacus - Wikipedia](https://en.wikipedia.org/wiki/Abacus)
+
+[2] [Mechanical calculator - Wikipedia](https://en.wikipedia.org/wiki/Mechanical_calculator)
+
+[3] [Difference engine - Wikipedia](https://en.wikipedia.org/wiki/Difference_engine)
+
+[4] usually 5.0V
+
+[5] Signal waves from things like a wifi router, microwaves, antennas etc can cause small changes in the voltage of wires. This is called noise. Encoding 1 to 5.0v and 0 to 0.0v lets us neutralize the effect of noise because the actual voltage of a wire can be rounded to the nearest value (0 or 5) easily.

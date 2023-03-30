@@ -2,7 +2,7 @@
 
 Any medium that can record information can be turned into either working memory for processors or storage for safekeeping software (or as something inbetween which we discuss in a bit). However for specialized computers we have to specialized storage and specialized memory. This results in different types of hardware that have different access times, different capacity for the same price, and different volatility, forming a **Memory Hierarchy** as seen below.
 
-(TODO: insert a Memory Hierarchy image here)
+![image.png](assets/2aab6a1eecd9d70c3e0eb346b748678cbe45840e.png)
 
 Let's discuss the hierarchy tiers in more detail.
 
@@ -21,3 +21,5 @@ Note: Operating Systems in modern PCs have options to treat Storage space as ext
 
 One way we can use the memory hierarchy to improve performance is executing programs from memory instead of storage. This lets CPUs use the higher access speed of RAMs to execute programs faster. 
 In fact that's how every modern CPU works nowadays. The Operating System always copies the program that's going to be executed into memory and tells the CPU to start at the first function to execute (we'll talk more about this in the advanced RE guide). The concept is so important that the computers implementing it are classified with a fancy name: **Stored Program Computers**.
+
+[1] Remember Words from chapter 2.2? Each register in most CPU designs can only store up to one word of data.
