@@ -14,9 +14,9 @@ There's a simpler way to express that concept, we can use powers of 10 to show t
 
 In a number system like this we assign 10 digits (0 1 2 3 4 5 6 7 8 9) specific values, then use powers of 10 to help us assign values bigger than 9 to numbers. This encoding of values to numbers is called **The Base-N Positional System**. Since we use everyday numbers based on powers of 10 the specific encoding for them is called **The Base-10 Positional System**, also known as the **Decimal System**.
 
-The Important point to understand here is that we don't have to use 0 1 2 3 4 5 6 7 8 9 as our symbols, that's a pretty arbitrary rule that every human accepted because they could neatly count on their 10 finger hands.
+The Important point here is that we don't have to use 0 1 2 3 4 5 6 7 8 9 as our symbols, that's a pretty arbitrary rule that was widely accepted because we can count from 1 to 10 with our fingers.
 
-For example, earlier we agreed to design our electronic calculators to only use 0s and 1s, so they are the only digits we can work with. To represent any higher values with those digits we'd need to put them together, using powers of 2 to assign value to each digit. This results in a **Base-2 Positional System**, also known as the **Binary system**. 
+For example, electronic calculators are designed to treat lack of electricity as 0 and high enough voltage as 1. To represent any higher values with those digits we'd need to put them together, using powers of 2 to assign value to each digit. This results in a **Base-2 Positional System**, also known as the **Binary system**. 
 
 Here are the same examples from above, represented in binary:
 
@@ -40,12 +40,16 @@ Let's see what the above numbers look like in hexadecimal:
 
 3ED represents the same value as 1005, it's just written in Hexadecimal instead of Decimal.
 
-We can represent the same value using any arbitrary base[1], but Binary and Hexadecimal are important ones when it comes to working with calculators and computers. The 0s and 1s we designed our Calculators around earlier are exactly the digits used in the binary system, and as we'll find out in a bit Hexadecimal numbers are easier to deal with than binary ones when encoding data.
+Note: to easily understand which base different numbers are written in, special prefixes are used with the numbers. "0x" is used for hex numbers (0x15 = 21) while binary numbers use "0b" (0b1111 = 15). Decimal numbers don't use a prefix
+
+We can represent the same value using any arbitrary base[1], but Binary and Hexadecimal are important ones when it comes to working with calculators and computers. The 0s and 1s we designed our Calculators around earlier are the same digits used in the binary system, and as we'll find out in a bit Hexadecimal numbers are easier to deal with than binary ones when encoding data.
 
 ## Bits, Bytes, Words
 
 **Bi**nary Digi**t**s are called Bits. A **Byte** is a common way of splitting binary numbers used in every computer today, consisting of 8 bits[2]. A **Word** is a fixed sized unit containing bits that is important to Processor designs (we'll talk more about Word in the Advanced RE guide as it's not that important here).
 
 Machine Code in every computer is divided into Bytes, but it's pretty common to use the hexadecimal representation of bytes (called **Hex Bytes**) rather than the binary representation. This is possible because 2 hexadecimal digits can contain as many values as 8 bits.
+
+Note: We'll use hex bytes from now on when talking about binary numbers.
 
 With all of that out of the way, let's talk about how we can do math operations using electricity.

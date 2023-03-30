@@ -1,4 +1,4 @@
-# Chapter 2.2: Using electricity to do Binary Math
+# Chapter 2.2: Using Boolean Algebra to make electricty do Binary Math
 
 Boolean Algebra is a branch of mathematic where math nerds grab a bunch of "True" and "False" values and do logic operations on them. It's goal is to state every logic question as math functions and solve them using math rules.
 
@@ -42,7 +42,7 @@ Thus we can scale up binary addition by chaining binary adders together, each ta
 
 In fact we could define the other three math operations as a chain of additions and use binary adders chained up together:
 
-- Subtraction is just adding a negative number to a positive number (5 - 3 = 5 + (-3)), we can encode negative binary numbers to some positive binary numbers to accomplish this.
+- Subtraction is just adding a negative number to a positive number (5 - 3 = 5 + (-3)). We can encode negative binary numbers to some positive binary numbers to accomplish this.[7]
 
 - Multiplication is just an addition chain for an operand (3 x 4 = 3 + 3 + 3 + 3, or 3 x 4 = 4 + 4 + 4)
 
