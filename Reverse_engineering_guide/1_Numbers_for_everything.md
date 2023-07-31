@@ -1,4 +1,4 @@
-# Chapter 1: Numbers for everything
+# Numbers for everything
 
 Since the processors inside computers can do almost anything, it's tempting to think that they must be insanely complicated, or outright supernatural in some way. The truth, however, is that they're actually incredibly simple. They are calculators. What enables us to solve any problem with computers isn't their complexity - rather, it's our ability to turn every problem into a set of numbers and math operations, which a calculator can then solve.
 
@@ -14,7 +14,7 @@ For example, let's say you want to scan a paper and display it on your computer'
 4. The new numbers (now representing the scanned image in a way the monitor can work with) are sent to the Monitor
 5. The Monitor decodes the numbers and displays the scanned image.
 
-Note: All the processor has to do here is take numbers in, run calculations on them, and give the resulting numbers back. This means that anything that can calculate things can be used as a processor, such as a mechanical engine, an electronic chip, or some guy we pay to do the work for us.
+> All the processor has to do here is take numbers in, run calculations on them, and give the resulting numbers back. This means that anything that can calculate things can be used as a processor, such as a mechanical engine, an electronic chip, or some guy we pay to do the work for us.
 
 Every program and file in a computer consists of numbers the processors can work with. This representation of said programs and data is called **Machine Code**. The Machine Code underlying every program and data in a computer can be viewed easily, letting us decode them and research how they work. This also lets us modify any program by encoding our modifications into machine code and applying the changes to the existing machine code of the program.
 
