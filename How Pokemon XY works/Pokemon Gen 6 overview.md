@@ -12,7 +12,7 @@ These games consist of four major parts:
 
 > There are also minor part of the game code not contained in the above such as savedata code, movie playing code, Live challenge code, etc.
 
-The game code is shared between ORAS and XY with very minor changes outside of the addition of new features in ORAS such as the skytrip.
+XY and ORAS share the same gen 6 engine XY was built on. This means that a lot of the code is similar between both pair of games with only minor differences.
 
 Both pair of games are built on GameFreak's internal game engine called gflib_cpp. And in turn gflib_cpp is built on the NintendoWare4CTR engine and the Nintendo 3DS SDK.
 
@@ -24,13 +24,12 @@ The Gen 6 games consist of multiple, highly independent systems that come togeth
 
 - Multiple individual components (ZoneData, AreaData, Collision maps, Camera configurations, NPC/Prop registries, a lot of model/animation files, map matrixes) are used to assemble the map together on runtime.
 - Many of the games' systems (Pokemon reactions to getting touched in Amie, the entire battle AI, NPC behavior, progression gating) is done through scripts that were written in the Pawn Script language then compiled into .amx files
-- Almost all of the game's stats, NPC/interactables information, and item/pokemon data is stored inside asset files. These are usually proprietary formats that were compiled from Excel spreadsheets or special .cdat files dating back to gen 3
-
-Each one of those components can easily be swapped without breaking anything. 
+- Almost all of the game's stats, NPC/interactables information, and item/pokemon data is stored inside asset files. These are usually proprietary formats that were compiled from Excel spreadsheets or something similar.
 
 The only components handled by code are things that are needed to run all of the asset based systems. Such as the Field engine, the Battle engine, the Amie engine, etc. As well as those "App"s mentioned earlier.
 
-## The Gen 6 games have a lot of obsfucation
+## The Gen 6 games have a lot of weird optimizations
 
-There's many weird design choices involved in how gen 6 games handle their assets such as Pawn Script command names being hashed, assets being stored inside archive files without any names, and GUI elements using hashed names. These can only be explained as obfuscations meant to prevent modders like us from having an easy time, or to prevent data from leaking before they're meant to be shown (mostly in the case of event pokemon).
+There's many weird design choices involved in how gen 6 games handle their assets such as Pawn Script command names being hashed, assets being stored inside archive files without any names, and GUI elements using 1-2 letter names.
 
+ These seem to be attempts to optimize asset usage from GameFreak, however it's unknown whether all these random obfuscations result in actual performance gains.

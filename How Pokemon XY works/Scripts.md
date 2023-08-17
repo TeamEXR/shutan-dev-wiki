@@ -4,10 +4,10 @@ The gen 6, gen 7, and to some extent gen 8 Pokemon games use the Pawn Scripting 
 
 The entire battle AI, text handling code for Battles, almost all of the NPC/Furniture behavior, and Amie interaction logic is implemented with pawn files. 
 
-Each Zone in the field can use a "Level Script" which always runs in the background. Additionally they can also use a different script file to define NPC behavior. In contrast "Global Script" files take care of things that aren't necessarily tied to zone-specific field behavior. [TODO: confirm this paragraph]
+[TODO: confirm the following paragraph] Each Zone in the field can use a "Level Script" which always runs in the background. Additionally they can also use a different script file to define NPC behavior. In contrast "Global Script" files take care of things that aren't necessarily tied to zone-specific field behavior. 
 
 [TODO: make a list of all global pawn script files and what they actually do]
 
-ExeFS's code.bin has the core Pawn runtime embedded inside, while various CROs store "Script Commands" script files can invoke to do things.
+ExeFS's code.bin has the core Pawn runtime embedded inside, while various CROs store "Script Commands" functions script files can invoke to do things.
 
 [TODO: add list of known Script commands here]

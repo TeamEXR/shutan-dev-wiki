@@ -1,6 +1,6 @@
 # ZoneData 
 
-Pokemon XY's map is placed on a matrix, divided into 40x40 "Zones". These Zones, when occupied, are handled in-game as header files that specify a terrain model, NPC models, Building models, and a collision map to be assembled together into a map zone using rendering configurations as specified by AreaData.
+Pokemon XY's map is placed on a matrix, divided into 40x40 cells, and each one can be optionally filled with one "Zone". These zones are assembled together from a terrain model, NPC models, building models, a collision map, and an AreaData ID. The "Zone header" is responsible for specifying what files to use.
 
 ZoneData archives are BinLinker files with ZO magic. There are 349 of them and they store:
 
@@ -13,6 +13,8 @@ ZoneData archives are BinLinker files with ZO magic. There are 349 of them and t
 ## Zone Headers
 
 Zone Headers (known as Map Headers in the gen 4 scene) specify general flags and data for each Zone.
+
+>  The following header info is exclusive to XY. Zone Headers in ORAS have a slightly different format.
 
 ```c++
 struct ZoneHeader{
@@ -33,7 +35,7 @@ struct ZoneHeader{
     
     /*0x20*/ uint16_t H0x1C {
   		parentMap : 10,
-  		OLvalue : 6
+  		OLvalue : 6 //What is this about?
 	};
 	/*0x22*/ uint16_t H0x1E {
   		weather : 5,
@@ -55,17 +57,17 @@ struct ZoneHeader{
     
     /*0x26*/ uint16_t bgSysType; // unsure what this is
     /*0x28*/ uint16_t unusedField; // but are we actually sure this is unused....
-    /*0x2A*/ uint16_t uniqueSequenceLibraryID; // Something related to Cameras....?
+    /*0x2A*/ uint16_t uniqueSequenceLibraryID; // What's a "Sequence library"?
     
     /*0x2C*/ uint32_t unknownFlags {
         enableBloom : 1, // [TODO: investigate this]
         enableFlash : 1, // Apparently this field only enables flash in ORAS? what does it do in XY....
         enableInverseKinematics : 1, // The heck is an Inverse Kinematics??
-        enableReverb : 1, // Que
+        enableReverb : 1, // What
         unknownFlags5to11 : 7,
         enableBreathFX : 1, // Enables the Breathing effects you can sometimes see in snowy cities a la Snowbelle City
         enableDowsingMachine : 1,
-        unknownFlag14 : 1, // Hello says this flag is related to pss_interfare_window_proc in XY?
+        unknownFlag14 : 1, // This flag is related to pss_interfare_window_proc in XY?
         unknownFlag15 : 1,
         enableStereostopic3D : 1, // This apparently enables 3D? [TODO: investigate this]
         stereo3DType : 4, // This needs investigation too
@@ -78,8 +80,6 @@ struct ZoneHeader{
     /*0x38*/ uint32_t flyZ;
 }; // size = 0x3C
 ```
-
-> ! This header info is exclusive to XY. Zone Headers in ORAS have a slightly different format.
 
 ## Zone Entities
 
@@ -192,7 +192,7 @@ This file is a compiled .amx file, storing all entity functionality related to t
 
 ZoneData stores encounter tables specifying the chance that the player will run into wild pokemon while:
 
-- Going around using Surf
+- Surfing around
 - Fishing
 - Walking inside tall grass (or in the case of XY tall grass and flowers)
 - Walking normally (for caves)
@@ -203,4 +203,4 @@ ZoneData stores encounter tables specifying the chance that the player will run 
 
 ## Reflections
 
-This file is a table storing info about.... NPC reflections? [TODO: uh how do NPC reflections work?]
+This file is a table storing info about.... NPC reflections? [TODO: how do NPC reflections work?]

@@ -1,6 +1,6 @@
 # Text and Localization
 
-gflib_cpp, GameFreak's internal core framework for games, supports specialized text archives for games. The code for this is largely based on the same code used for text archives in gen 3, 4, and 5 before getting abstracted into GF's game engine. The code in question is implemented in gfl::str.
+gflib_cpp, GameFreak's internal core framework for games, supports specialized text archives for games. The code for this is largely based on the same code used for text archives in gen 3, 4, and 5 before getting abstracted into GF's game engine as the `gfl::str` namespace.
 
 These text archives support:
 
@@ -14,7 +14,7 @@ These text archives support:
 
 ## gflib text archive format
 
-Each text archive is divided into multiple sections based on the number of languages/handwritings used. Then each section stores a column of text lines. The header consists of a main part and a number of smaller parts specifying line info and section info
+Each text archive is divided into multiple sections based on the number of languages/handwritings used. Then each section stores a series of text lines. The header consists of a main part and a number of smaller parts specifying line info and section info
 
 ```c++
 struct TextArchiveHeader{
@@ -37,15 +37,15 @@ struct TextArchiveLineInfo{
 } // size = 0x0C
 ```
 
-> ! lines of text in text archives only end with EOM, not with `\n`. This is because `\n` is used to let messages in gen 6 games support multi-line text.
+>  lines of text in text archives only end with EOM, not with `\n`. This is because `\n` is used to let messages in gen 6 games support multi-line text.
 
 > The strings are stored using wide characters, meaning that each character of a string takes two bytes.
 
 ## how to encrypt/decrypt gflib text files
 
-Set up the key for encryption/decryption (This key is `0x7C89 + (0x2983 * stringIndex)` in gen 6 games), then iterate over each character of the string. On each iteration:
+Set up the key for encryption/decryption (This key is `(0x2983 * (stringIndex + 3))` in gen 6 games), then iterate over each character of the string. On each iteration:
 
-1- XOR the character's binary form with the key. If the character is encrypted this will decrypt the character and vice versa.
+1- XOR the character's binary form with the key. If the character is encrypted this will decrypt the character. If the character is decrypted it will be encrypted.
 
 2- Bit rotate the key right 13 times
 
@@ -64,7 +64,7 @@ void decryptOrEncryptGFLibTextString(wchar_t* string, uint32_t stringLength, uin
 
 ## Tags
 
-The gfl::str system supports custom Tag codes that can either format the text (e.g. color it) or more commonly query the game for information and put it in the text. For example you can use a tag to get the player's name or their lead pokemon's name.
+The `gfl::str` system supports custom Tag codes that can either format the text (e.g. color it) or more commonly query the game for information and put it in the text. For example you can use a tag to get the player's name or their lead pokemon's name.
 
 Tag codes are implemented as a special binary sequence. First a special code signifies the start of a Tag sequence (let's call it TAG_START), the next byte then signifies the number of tags and their arguments in the tag sequence. then the tags follow with their arguments after their tag code.
 
