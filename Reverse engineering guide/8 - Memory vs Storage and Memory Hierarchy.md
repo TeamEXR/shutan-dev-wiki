@@ -2,7 +2,7 @@
 
 Any medium that can record information can be turned into either working memory for processors or storage for safekeeping software (or as something inbetween which we discuss in a bit). However for specialized computers we have to specialized storage and specialized memory. This results in different types of hardware that have different access times, different capacity for the same price, and different volatility, forming a **Memory Hierarchy** as seen below.
 
-![Memory hierarchy Pyramid.png](/static/img/memory_hierarchy_pyramid.png)
+![The Memory Hierarchy](assets/2aab6a1eecd9d70c3e0eb346b748678cbe45840e.png)
 
 Let's discuss the hierarchy tiers in more detail.
 

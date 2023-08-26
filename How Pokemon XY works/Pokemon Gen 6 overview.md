@@ -28,7 +28,7 @@ The Gen 6 games consist of multiple, highly independent systems that come togeth
 
 The only components handled by code are things that are needed to run all of the asset based systems. Such as the Field engine, the Battle engine, the Amie engine, etc. As well as those "App"s mentioned earlier.
 
-## The Gen 6 games have a lot of weird optimizations
+## The Gen 6 games optimized in the wrong ways
 
 There's many weird design choices involved in how gen 6 games handle their assets such as Pawn Script command names being hashed, assets being stored inside archive files without any names, and GUI elements using 1-2 letter names.
 

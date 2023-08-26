@@ -2,7 +2,7 @@
 
 Programs use three ways to store data in memory:
 
-1. Allocate random parts of memory to storing data, and store the data there. This forms a **Heap** of data that the program can manipulate any way it wants.
+1. Put data in random parts of memory. This forms a **Heap** of data that the program can manipulate any way it wants.
 2. Stack the data on top of each other, forming a **Stack** in memory.
 3. Store the data in dedicated data segments in the program (right after all instructions).
 4. Store the data between instructions.
